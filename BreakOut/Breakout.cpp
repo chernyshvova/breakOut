@@ -5,6 +5,14 @@ int main()
 {
     //Start first scene
     game::MenuScene scene;
-    scene.run();
+    try
+    {
+        scene.run();
+    }
+    catch (const std::exception& ex)
+    {
+        std::cout << ex.what();
+    }
+
 }
 

@@ -53,35 +53,6 @@ void game::Ball::updatePos()
 	}
 }
 
-//void game::Ball::changeDirection()
-//{
-//	m_currentDirection = getRandomDirection();
-//}
-
-//game::MoveDirection game::Ball::getRandomDirection()
-//{
-//	switch (m_currentDirection)
-//	{
-//	case game::MoveDirection::Down:
-//		return getDownRandomDirection();
-//	case game::MoveDirection::DownLeft:
-//		return getDownLeftRandomDirection();
-//	case game::MoveDirection::DownRight:
-//		return geDownRightRandomDirection();
-//	case game::MoveDirection::Top:
-//		return getTopRandomDirection();
-//	case game::MoveDirection::TopLeft:
-//		return getTopLeftRandomDirection();
-//	case game::MoveDirection::TopRight:
-//		return getTopRightRandomDirection();
-//
-//	default:
-//		//TODO add exception
-//		break;
-//		return game::MoveDirection::Top;
-//	}
-//}
-
 void game::Ball::changeHorizontalDirection()
 {
 	switch (m_currentDirection)
@@ -97,8 +68,7 @@ void game::Ball::changeHorizontalDirection()
 		case game::MoveDirection::TopRight:
 			m_currentDirection = getLeftRandomDirection();
 		default:
-			//TODO add exception
-			break;
+			throw new std::exception("failed to parse ball moving");
 	}
 
 }
@@ -118,8 +88,7 @@ void game::Ball::changeVerticalDirection()
 	case game::MoveDirection::TopLeft:
 		m_currentDirection = getDownRandomDirection();
 	default:
-		//TODO add exception
-		break;
+		throw new std::exception("failed to parse ball moving");
 	}
 }
 
@@ -137,9 +106,7 @@ game::MoveDirection game::Ball::getTopRandomDirection()
 		case 3:
 			return game::MoveDirection::TopRight;
 		default:
-			//TODO add exception
-			break;
-			return game::MoveDirection::Top;
+			throw new std::exception("failed to parse ball moving");
 	}
 
 }
@@ -158,9 +125,7 @@ game::MoveDirection game::Ball::getDownRandomDirection()
 	case 3:
 		return game::MoveDirection::DownRight;
 	default:
-		//TODO add exception
-		break;
-		return game::MoveDirection::Top;
+		throw new std::exception("failed to parse ball moving");
 	}
 }
 
@@ -178,9 +143,7 @@ game::MoveDirection game::Ball::getLeftRandomDirection()
 	case 3:
 		return game::MoveDirection::DownLeft;
 	default:
-		//TODO add exception
-		break;
-		return game::MoveDirection::Top;
+		throw new std::exception("failed to parse ball moving");
 	}
 }
 
@@ -198,89 +161,6 @@ game::MoveDirection game::Ball::getRightRandomDirection()
 	case 3:
 		return game::MoveDirection::DownRight;
 	default:
-		//TODO add exception
-		break;
-		return game::MoveDirection::Top;
+		throw new std::exception("failed to parse ball moving");
 	}
 }
-//------------------
-
-//game::MoveDirection game::Ball::getTopRightRandomDirection()
-//{
-//	srand(time(NULL));
-//	auto randomDirection = rand() % 3 + 1;
-//
-//	switch (randomDirection)
-//	{
-//	case 1:
-//		return game::MoveDirection::Left;
-//	case 2:
-//		return game::MoveDirection::TopLeft;
-//	case 3:
-//		return game::MoveDirection::DownLeft;
-//	default:
-//		//TODO add exception
-//		break;
-//		return game::MoveDirection::Top;
-//	}
-//}
-//
-//game::MoveDirection game::Ball::getTopLeftRandomDirection()
-//{
-//	srand(time(NULL));
-//	auto randomDirection = rand() % 3 + 1;
-//
-//	switch (randomDirection)
-//	{
-//	case 1:
-//		return game::MoveDirection::Right;
-//	case 2:
-//		return game::MoveDirection::TopRight;
-//	case 3:
-//		return game::MoveDirection::DownRight;
-//	default:
-//		//TODO add exception
-//		break;
-//		return game::MoveDirection::Top;
-//	}
-//}
-//
-//game::MoveDirection game::Ball::getDownLeftRandomDirection()
-//{
-//	srand(time(NULL));
-//	auto randomDirection = rand() % 3 + 1;
-//
-//	switch (randomDirection)
-//	{
-//	case 1:
-//		return game::MoveDirection::Right;
-//	case 2:
-//		return game::MoveDirection::TopRight;
-//	case 3:
-//		return game::MoveDirection::DownRight;
-//	default:
-//		//TODO add exception
-//		break;
-//		return game::MoveDirection::Top;
-//	}
-//}
-//
-//game::MoveDirection game::Ball::geDownRightRandomDirection()
-//{
-//	srand(time(NULL));
-//	auto randomDirection = rand() % 3 + 1;
-//
-//	switch (randomDirection)
-//	{
-//	case 1:
-//		return game::MoveDirection::Left;
-//	case 2:
-//		return game::MoveDirection::TopLeft;
-//	case 3:
-//		return game::MoveDirection::DownLeft;
-//	default:
-//		//TODO add exception
-//		break;
-//		return game::MoveDirection::Top;
-//	}
-//}
