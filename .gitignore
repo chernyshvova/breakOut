@@ -36,3 +36,4 @@ BreakOut/Debug/**
 .vs
 Release/**
 BreakOut/Release/**
+BreakOut/x64/Debug
